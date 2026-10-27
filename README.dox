@@ -1,0 +1,46 @@
+
+
+
+/**
+@mainpage EPL232 Assignment 1 – Pattern Matching
+
+@author ELIANA STELLA GEORGIOU
+
+This program searches for occurrences of a DNA pattern (substring) inside
+a DNA sequence using two algorithms:
+- Brute Force search
+- Karp–Rabin search (rolling hash with modulo Q)
+
+How it Works
+The program takes three arguments from the command line:
+1. Algorithm flag: -bf (brute force) or -kr (Karp–Rabin).
+2. A text file containing a DNA sequence.
+3. A text file containing the pattern to search for.
+
+The program reads only the first line of each file and verifies that both
+the DNA sequence and pattern contain valid characters (A, C, G, T).
+
+It then applies the selected algorithm to count how many times the pattern
+appears in the DNA sequence. Overlapping matches are counted.
+
+- I use `long long` for hash values to safely handle large numbers
+  during multiplication before applying modulo Q so I can handle overflow
+
+- Characters are cast to `unsigned` to ensure that all ASCII codes are
+  treated as non-negative values.
+- The maximum DNA length is defined as N = 512000 as asked
+
+The code was tested with both small and large DNA sequences.  
+Known limitations:
+- If the pattern length is larger than the sequence, result is 0.
+- If invalid characters are present in the input, an error is displayed.
+Also I wasn’t sure if the given dna pattern was in capitals and the dna sequence was in lower case or the opposite if that should work so that doesn’t work the pattern is 0.
+
+This project was a good way to practice string processing, hashing, and file
+handling in C. The Brute Force method is simple but slow, while Karp–Rabin is
+faster for long DNA sequences.
+
+Overall, it was both challenging and enjoyable. I learned a lot about how
+algorithms work in practice, it was a decent first coding exercise not too harsh considering that we now started learning and dealing with the c language .:)
+
+*/
