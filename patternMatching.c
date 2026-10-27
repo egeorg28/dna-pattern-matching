@@ -267,7 +267,7 @@ int read_first_line(const char *filename, char *savedFile, int cap)
 
     int len = (int)strlen(savedFile);
     /* remove newline or carriage return at end if present */
-    if (len > 0 && (savedFile[len - 1] == '\n' || savedFile[len - 1] == '\r'))
+    while (len > 0 && (savedFile[len - 1] == '\n' || savedFile[len - 1] == '\r'))
     {
         savedFile[len - 1] = '\0';
         len--;
